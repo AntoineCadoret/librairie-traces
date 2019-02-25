@@ -1,0 +1,46 @@
+/**
+* @author Antoine Cadoret <antoinecadoret97@gmail.com>
+ * @author Beverly Cagelet <beverly.cagelet.protic@gmail.com>
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+ *
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ *
+ * Polices de caractères
+ * Palette de couleurs
+ * Points de rupture
+ **/
+
+/** Polices de caractères **/
+$policeTitres: Georgia, serif;
+$policeCorps: Montserrat, sans-serif;
+
+/** Palette de couleurs **/
+// Au besoin utiliser http://chir.ag/projects/name-that-color pour nommer les couleurs
+
+$noir: #000;
+$blanc: #fff;
+$gris: #4A4A4A;
+$grisPale : #f4f4f4;
+
+$rouge : #851139;
+$jaune : #F8E71C;
+$rougeErreur : #ff2702;
+
+$couleurInteractivite: $jaune;
+$dominante: $rouge;
+$secondaire: $noir;
+$accent : $jaune;
+$texte:$noir;
+$texteInverse:$blanc;
+$texteRouge: $rouge;
+
+$noirTransparent: transparentize($noir, 0.5);
+$grisTransparent: transparentize(#B5B5B5,.85);
+//$degradeBleu: linear-gradient(right, $bleuMarin, $bleuMinuit);
+
+/** Points de rupture **/
+$ecranEtroit : 320px;
+$ecranMoyen : 600px;
+$ecranLarge : 1200px;

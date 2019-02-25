@@ -1,0 +1,114 @@
+//En-tête
+header.entete {
+  background-color: $rouge;
+  color: $blanc;
+  .logo {
+    width: 40%;
+    @media (min-width: $ecranMoyen) {
+      width: 20%;
+      float: left;
+    }
+  }
+  ul{
+    margin: 0 auto;
+    max-width: 1000px;
+    list-style-type: none;
+    li {
+      @media (min-width: $ecranMoyen) {
+        display: inline;
+        padding: 1em 0;
+      }
+      a {
+        text-decoration: none;
+        &:link, &:visited {
+          color: $blanc;
+        }
+        &:hover, &:active {
+          color: $jaune;
+          transition-duration: 1s;
+        }
+        .lien__fondBlanc:hover {
+          color: $noir;
+        }
+        .lien__fondBlanc:link {
+          color: $rouge;
+        }
+      }
+    }
+  }
+  .menu__bloc {
+    padding: 3% 3em;
+  }
+  .menu__listeItem a {
+    padding: 0 2%;
+    //margin: 2em 0;
+    text-decoration: none;
+    position: relative;
+      transition: all 0.15s ease-out;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 80%;
+      height: 2px;
+      bottom: 0;
+      left: 10%;
+      background-color: $couleurInteractivite;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all .25s cubic-bezier(1,.25,0,.75) 0s;
+    }
+    &:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+  div.secondeNav {
+    background-color: rgb(244,244,244);
+    color: $rouge;
+    ul {
+      @media (min-width: $ecranMoyen) {
+        display: inline-flex;
+      }
+      li a {
+        color: $rouge;
+        font-weight: 600;
+        padding: 0 1em;
+        &:hover {
+          color: lighten($rouge, 50%) ;
+          transition-duration: 1s;
+          transition: ease-in;
+          //color: darken($couleurInteractivite,10%);
+        }
+      }
+    }
+    select {//todo option ?
+      border: $rouge 1px solid;
+      font-family: Montserrat;
+      margin: 0.4em;
+      font-size: 1.2rem;
+      font-weight: 800;
+      &:focus {
+        background-color: $grisTransparent;
+        outline: $rouge;
+      }
+    }
+    form#fRecherche {
+      margin: 0 0.2em;
+      padding-top: 1em;
+    }
+  }
+  .lien__fondBlanc {
+    margin: 4em 0;
+  }
+  .ctrlPanier__nombreItems{
+    position: relative;
+    right: 1.5em;
+    background-color: yellow;
+    border-radius: 10px;
+    line-height: 0.7em;
+    border: 1px solid;
+    min-width: 1.3em;
+  }
+}
+

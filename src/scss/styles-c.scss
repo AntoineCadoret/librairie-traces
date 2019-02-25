@@ -1,0 +1,702 @@
+/**
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+**/
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * BIBLIOTHÈQUES (dans le dossier bower_components)
+ ** Normalize
+ ** Susy
+ * UTILITAIRES
+ ** variables
+ ** mixins
+ * BASE
+ ** typographie
+ * GRILLE
+ ** entete
+ ** general
+ *
+
+ PAGE FICHE !!
+ * ÉLÉMENTS DU HAUT
+ * SECTION INFO LIVRE
+ ** les 3 sections onglets
+ ** publication
+ * SECTION 2 (honneur et recension)
+ * LES AVIS
+ * ONGLET
+ * ICONES
+ ** étoile
+
+ PAGE PANIER !!
+ * RETROACTION PANIER
+ ** module .ctrlPanier
+ ** Interactivité
+ ** Compléments
+ ** tableau d'items
+ ** règles générales pour le tableau
+ * VIGNETTES
+ ** afficher à un endroit différent les actions
+ * SOUS TOTAl
+
+/**** LIB (Bibliothèques) ****/
+@import "bower_components/normalize-css/normalize";
+@import "bower_components/susy/sass/susy";
+@import 'bower_components/susy/sass/plugins/svg-grid';
+///////***** utilitaires ****/
+@import "utilitaires/variables";
+@import "utilitaires/mixins";
+/***** base (typo) ****/
+@import "base/typo";
+/***** grille ****/
+@import "grille/entete";
+@import "grille/general";
+@import "grille/pied";
+
+/* ** PAGE FICHE !! ** */
+
+/* ÉLÉMENTS DU HAUT (fils ariane, titre, sous-titre, auteur)  */
+h1 {
+  font-family: Georgia, serif;
+  color: $noir;
+  text-align: left;
+  margin: 0 0.3em 0.3em 0.3em;
+  @media(min-width: $ecranMoyen) {
+    margin: 0 0 -0.3em 0;
+  }
+}
+
+h2 {
+  margin: 0 0.3em;
+  @media(min-width: $ecranMoyen) {
+    margin: 0.3em 0;
+  }
+}
+
+.auteur {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  @media (min-width: $ecranMoyen) {
+    display: block;
+    width: span(12 of 12);
+  }
+  ul {
+    width: span(3.5 of 4);
+    border-bottom: 2px solid $rouge;
+    margin: 0.5em 0;
+    padding: 0;
+    text-align: center;
+    @media (min-width: $ecranMoyen) {
+      display: flex;
+    }
+  }
+  li {
+    list-style: none;
+    @media (min-width: $ecranMoyen) {
+      margin-left: 0.1em;
+      font-size: 28px;
+      font-size: 2.8rem;
+    }
+  }
+  .liAuteur:after {
+    content: ", ";
+  }
+  .liAuteur:last-child:after {
+    content: " ";
+  }
+}
+
+/* SECTION INFO LIVRE */
+.divInfo {
+  margin: 0 0.5em;
+  @media (min-width: $ecranMoyen) {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.divImage {
+  padding: 5% 0;
+  //display: inline-table;
+  @media (min-width: $ecranMoyen) {
+    width: span(5 of 12);
+  }
+  img {
+    width: 100%;
+  }
+  .livreSansImage {
+    height: 40em;
+    background-color: $rouge;
+  }
+}
+
+.contenu {
+  @media (min-width: $ecranMoyen) {
+    width: span(7 of 12);
+  }
+  &__prixLivre {
+    font-size: 30px;
+    margin: 0;
+  }
+  &__formQte {
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+    select {
+      border: 2px solid $rouge;
+      width: span(3 wide of 12);
+      height: 2em;
+      margin-top: 0.3em;
+      margin-bottom: 1.5em;
+    }
+  }
+  /* les 3 sections onglets */
+  h3 {
+    margin: 0.2em 0 0 0;
+  }
+  p {
+    margin: 0.5em 0;
+  }
+
+  .sectionOnglet {
+    margin-bottom: 0;
+    margin-top: 2em;
+  }
+
+  /* publication */
+  .infoPublication {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 1em 0;
+    }
+    .liCategories {
+      margin: 0.3em 0.5em;
+    }
+    .infoGras {
+      font-weight: bold;
+    }
+  }
+
+}
+
+/* SECTION 2 (honneur et recension) */
+.section2 {
+  h2 {
+    text-align: center;
+    margin-top: 1.5em;
+    @media (min-width: $ecranMoyen) {
+      text-align: left;
+    }
+  }
+  h2:after {
+    content: "";
+    display: block;
+    width: 8em;
+    height: 1px;
+    background-color: $rouge;
+    margin-left: calc(50% - 4em);
+    margin-top: 0.1em;
+    @media (min-width: $ecranMoyen) {
+      width: 15em;
+      margin-left: 0;
+      margin-top: -0.1em;
+    }
+  }
+}
+
+/* LES AVIS */
+.avis {
+  padding-top: 0.8em;
+  margin: 2em 0.5em 1em 0.5em;
+  border-top: 2px solid #979797;
+  &__hautAvis {
+    display: flex;
+    img {
+      max-width: 150px;
+      max-height: 100px;
+    }
+    p {
+      margin: 0 0 0.2em 0.5em;
+    }
+  }
+  &__texte {
+    p {
+      margin: 0.3em 0 2em 0;
+    }
+  }
+  h2 {
+    margin-bottom: 0.5em;
+    text-align: center;
+    @media (min-width: $ecranMoyen) {
+      text-align: left;
+    }
+  }
+  h2:after {
+    content: "";
+    display: block;
+    width: 8em;
+    height: 1px;
+    background-color: $rouge;
+    margin-left: calc(50% - 4em);
+    margin-top: 0.1em;
+    @media (min-width: $ecranMoyen) {
+      width: 10em;
+      margin-left: 0;
+      margin-top: -0.1em;
+    }
+  }
+  .voirPlusAvis {
+    text-align: center;
+    text-decoration: underline;
+    @media (min-width: $ecranMoyen) {
+      text-align: left;
+    }
+  }
+}
+
+.formAvis {
+  margin-left: 0.3em;
+  margin-bottom: 2em;
+  text-align: center;
+  @media (min-width: $ecranMoyen) {
+    text-align: left;
+  }
+  h3 {
+    margin: 0;
+    color: $texteRouge;
+  }
+  p {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+  }
+  .lesEtoiles {
+    margin-left: 0.5em;
+  }
+  textarea {
+    display: flex;
+    margin-bottom: 1em;
+    min-width: span(3 wide of 4);
+    max-width: span(3 wide of 4);
+    min-height: 4em;
+    max-height: 12em;
+    @media (min-width: $ecranMoyen) {
+      min-width: span(6 of 12);
+      max-width: span(11 of 12);
+      min-height: 4em;
+      max-height: 10em;
+    }
+  }
+  button {
+    display: block;
+  }
+}
+
+/* ONGLET */
+// Quelques styles de base qui s'appliqueront AVEC ou SANS JavaScript.
+howto-tab {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 16px;
+  color: $rouge;
+  padding: 0.8em 1.2em;
+  @media (min-width: 750px) {
+    font-size: 18px;
+    padding: 0.8em 1.5em;
+  }
+}
+
+howto-panel {
+  padding: 20px;
+  padding-top: 10px;
+}
+
+/**
+ * Si JavaScript est désactivé, l'élément personnalisé ne sera pas `:defined`.
+ * Dans ce cas les styles suivants s'appliqueront:
+ */
+howto-tabs:not(:defined) {
+  .h2Onglet {
+    font-size: 30px;
+    margin-left: 0;
+  }
+}
+
+howto-tabs:not(:defined), howto-tab:not(:defined), howto-panel:not(:defined) {
+  display: block;
+}
+
+howto-tab:not(:defined) {
+  padding: 0.25rem;
+}
+
+howto-panel:not(:defined) {
+  background-color: #f4f4f4;
+  margin-bottom: 20px;
+}
+
+/* ICONES */
+/* étoile */
+.icone {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.icone--bas {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 0.5em;
+  left: 0.2em;
+}
+
+#etoile {
+  fill: $rouge;
+}
+
+#etoileVide {
+  fill: white;
+}
+
+#triangleBas {
+  fill: $rouge;
+}
+
+/* RETROACTION PANIER */
+//module .ctrlPanier
+.divRetroaction {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  right: 0.5em;
+}
+
+.ctrlPanier__X,
+.ctrlPanier__nombreItems {
+  padding: 0.5rem 0.25rem;
+  font-size: 1.25rem;
+  display: inline-block;
+}
+
+.ctrlPanier__retroaction {
+  background-color: $grisPale;
+  border: 1px solid $gris;
+  padding: 0.5rem;
+  min-width: 30rem;
+  position: relative;
+  top: 0.5em;
+  border-radius: 4pt;
+  text-align: center;
+  p {
+    margin: 0.3em;
+  }
+  .pNoir {
+    color: $noir;
+  }
+  .lienBouton {
+    margin: 1.5em 0;
+    a, .a {
+      background-color: $jaune;
+      padding: 0.5em 1.2em;
+      text-decoration: none;
+      color: $noir;
+    }
+    a:hover, .a:hover,
+    a:focus, .a:focus {
+      background-color: $noir;
+      color: $jaune;
+    }
+  }
+  .livreSansCouverture {
+    background-color: $rouge;
+  }
+}
+
+.ctrlPanier__X {
+  padding: 0.5rem 0.75rem;
+  background-color: $grisPale;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 100%;
+  border: 2px solid $noir;
+}
+
+.btnX_ajax {
+  position: absolute;
+  right: 0.6em;
+}
+
+.frmRetroAjoutPanier {
+  display: inline-block;
+  position: absolute;
+  right: 0.2em;
+  top: 0.7em;
+}
+
+.retroImgLivre {
+  max-width: 10em;
+  max-height: 12em;
+}
+
+/** Interactivité **/
+.ctrlPanier__X:hover,
+.ctrlPanier__X:focus {
+  color: $grisPale;
+  background-color: $noir;
+}
+
+.ctrlPanier__retroaction:target {
+  display: none;
+}
+
+/** Compléments **/
+cite {
+  font-weight: bold;
+  font-style: normal;
+}
+
+cite::before {
+  content: "« "
+}
+
+cite::after {
+  content: " »"
+}
+
+/* ** PAGE PANIER !! ** */
+.pagePanier {
+  h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin-top: 0;
+    @media (min-width: $ecranMoyen) {
+      font-size: 24px;
+      font-size: 2.4rem;
+    }
+  }
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+  .estimationDuHaut {
+    display: block;
+    background-color: $grisPale;
+    padding: 0.3em 0.5em;
+    border-radius: 8px;
+    margin: 0 1em;
+    text-align: center;
+    @media (min-width: $ecranMoyen) {
+      width: span(4 of 12);
+      margin: 2em 0 0 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .livreSansImage {
+    background-color: $rouge;
+  }
+
+  /* tableau d'items */
+  .tableauItems {
+    margin-top: 2em;
+    width: 100%;
+    border-bottom: 2px solid #851139;
+    @media (min-width: $ecranMoyen) {
+      min-width: 425px;
+    }
+    thead {
+      background-color: $rouge;
+      color: $blanc;
+      line-height: 2em;
+    }
+    /*** On affiche les entêtes de colonnes seulement sur l'écran large ***/
+    th {
+      display: none;
+    }
+
+    /*** Sur écran étroit
+     Faire afficher les attributs correspondants aux entêtes de colonnes ***/
+    td:before {
+      content: attr(data-th) ": ";
+      font-weight: bold;
+      display: inline-block;
+      width: 6.5em;
+    }
+    @media (min-width: $ecranMoyen) {
+      td:before {
+        display: none;
+      }
+    }
+
+    /*** règles générales pour le tableau ***/
+    td {
+      display: block;
+    }
+
+    td:first-child {
+      padding-top: 1em;
+    }
+
+    td:last-child {
+      padding-bottom: 1em;
+    }
+
+    td[data-th='Prix'] {
+      margin-top: 1em;
+    }
+
+    select {
+      border: 2px solid $rouge;
+      width: 4em;
+      height: 2em;
+    }
+
+    /*** VIGNETTES ***/
+    td[data-th='Vignette'] {
+      width: 40%;
+      float: left;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $ecranMoyen) {
+      td[data-th='Vignette'] {
+        width: auto;
+        float: none;
+        margin-bottom: 0;
+      }
+    }
+
+    td[data-th="Vignette"],
+    .panier__actions {
+      text-align: center;
+      font-size: 80%;
+    }
+
+    td[data-th="Vignette"]:before,
+    td[data-th="Description"]:before {
+      content: "";
+      width: auto;
+    }
+
+    th, td {
+      text-align: left;
+    }
+
+    @media (min-width: $ecranMoyen) {
+      th, td {
+        display: table-cell;
+        padding: .25em .5em;
+      }
+
+      th:first-child, td:first-child {
+        padding-left: 0;
+      }
+
+      th:last-child, td:last-child {
+        padding-right: 0;
+      }
+    }
+
+    th, td {
+      vertical-align: top;
+    }
+
+    img {
+      max-width: 80%;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: $ecranMoyen) {
+      img {
+        max-width: 150px;
+        margin-top: 0;
+      }
+    }
+
+    /*** afficher à un endroit différent les actions ***/
+    .panier__actions {
+      text-align: right;
+      margin-right: span(1 of 4);
+    }
+    [data-th="Description"] .panier__actions {
+      display: none;
+      text-align: left;
+    }
+    @media (min-width: $ecranMoyen) {
+      [data-th="Total"] .panier__actions {
+        display: none;
+
+      }
+      [data-th="Description"] .panier__actions {
+        display: block;
+      }
+    }
+  }
+
+  /* SOUS TOTAl */
+  .sousTotal {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: $grisPale;
+    padding: 0.1em 0.5em;
+    margin-top: 1.5em;
+    border-radius: 8px;
+    .gras {
+      font-weight: bold;
+    }
+  }
+  .total {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    font-weight: bold;
+    .coutTotal {
+      font-size: 18px;
+    }
+    .coutTotal:after {
+      content: "";
+      display: block;
+      width: 14em;
+      height: 4px;
+      background-color: $rouge;
+    }
+    .btnRecalculer {
+      margin: 0.5em 0 2em 0;
+      background-color: $rouge;
+      padding: 0.7em 2.2em;
+      color: $blanc;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .btnRecalculer:hover,
+    .btnRecalculer:focus {
+      opacity: 0.8;
+    }
+    .divBtnBas {
+      @media (min-width: $ecranMoyen) {
+        display: flex;
+      }
+      p {
+        margin-bottom: 3em;
+      }
+      p:last-child {
+        @media (min-width: $ecranMoyen) {
+          margin-left: 2em;
+        }
+      }
+    }
+  }
+  .selectLivraison{
+    border: 2px solid $rouge;
+    width: 9em;
+    height: 2em;
+    color: $rouge;
+  }
+}

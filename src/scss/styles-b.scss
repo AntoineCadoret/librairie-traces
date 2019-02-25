@@ -1,0 +1,166 @@
+/**
+ * @author Antoine Cadoret <adresseCouriel>
+ * @author Beverly Cagelet <bev>
+**/
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * BIBLIOTHÈQUES (dans le dossier bower_components)
+ ** Normalize
+ ** Susy
+ * UTILITAIRES
+ ** variables
+ ** mixins
+ * BASE
+ ** typographie
+ * GRILLE
+ **
+ **
+
+/**** LIB (Bibliothèques) ****/
+//@import "../../bower_components/normalize-css/normalize";
+//@import "../../bower_components/susy/sass/susy";
+//@import '../../bower_components/susy/sass/plugins/svg-grid';
+/***** utilitaires ****/
+@import "utilitaires/variables";
+@import "utilitaires/mixins";
+/***** base (typo) ****/
+@import "base/typo";
+/***** grille ****/
+@import "grille/entete";
+@import "grille/general";
+@import "grille/pied";
+
+//////PAGE LIVRE
+h1 {
+  &:after {
+    content: "";
+    display: block;
+    width: 4em;
+    height: 1px;
+    background-color: $rouge;
+    margin-left: calc(50% - 2em);
+    margin-bottom: 1em;
+  }
+}
+
+//.ctnLivre {
+//  //display: inline-flex;
+//  display: block;
+//  .flexbox-2 {
+//    display: inline-flex;
+//
+//  }
+//  .livre {
+//
+//    width: 40%;
+//    //flex-wrap: wrap;
+//    &__image {
+//      min-width: 40%;
+//      img {
+//        max-width: 90%;
+//      }
+//    }
+//  }
+//}
+//@media (min-width: $ecranMoyen) {
+.ctnLivre { //also flexbox-1
+  display: block;
+  @media (min-width: $ecranMoyen) {
+    display: inline-flex;
+  }
+  .livre {
+    @media (min-width: $ecranMoyen) {
+      margin: 2em 0;
+      width: 25%;
+      padding: 1em;
+    }
+
+    //.flexbox-1 {
+    //  display: inline-flex;
+    //  flex-wrap: wrap;
+    //  justify-content: space-around;
+    //}
+
+    .flexbox-2 {
+      margin: 0;
+      justify-content: center;
+      align-content: center;
+    }
+    &__image {
+      display: flex;
+      background-color: $rouge;
+      //min-width: 400px;
+      height: 300px;
+      vertical-align: center;
+      align-self: center;
+
+      @media (min-width: $ecranMoyen) {
+        //flex-direction: column;
+        //padding: 5% 10%;
+        min-height: 340px;
+        width: 90%;
+      }
+
+      img {
+        margin: 0 12.5%;
+        align-content: center;
+        max-height: 100%;
+        box-shadow: 3px 3px 15px black;
+        @media (min-width: $ecranMoyen) {
+          max-width: 80%;
+          margin: 0;
+        }
+
+        &:hover {
+          box-shadow: none;
+          transition: ease-in 0.5s;
+          filter: grayscale(90%);
+        }
+      }
+    }
+    &__texte {
+      justify-content: baseline;
+      font-family: Montserrat;
+      &__titre {
+        font-family: Georgia;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//}
+
+//Catégories
+select { //todo option ?
+  border: $rouge 1px solid;
+  font-family: Montserrat;
+  margin: 0.4em;
+  font-size: 1.2rem;
+  font-weight: 800;
+  &:focus {
+    background-color: $grisTransparent;
+    outline: $rouge;
+  }
+}
+
+.ctnCategorie {
+  background-color: $rouge;
+  a {
+    color: white;
+  }
+}
+
+p.categorie {
+  font-size: 2rem;
+  font-family: Georgia;
+  color: black;
+}
+
+//Pagination
+.pagination {
+  text-align: center;
+  padding: 2em 0;
+}

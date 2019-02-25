@@ -1,0 +1,227 @@
+/**
+ * @author Antoine Cadoret <antoinecadoret97@gmail.com>
+ * @author Beverly Cagelet <beverly.cagelet.protic@gmail.com>
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+**/
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * MISE EN PAGE SUSY
+ * Grille pour l'écran étroit
+ * Grille pour l'écran large
+ * Conteneur
+ * RÉGLES DE BASE
+ */
+
+/***** MISE EN PAGE SUSY ******/
+@include border-box-sizing;
+
+// Grille pour l'écran étroit
+// Remplacer 600px par une variable de point de rupture
+@media(max-width: $ecranMoyen) {
+  $susy: (
+          'columns': susy-repeat(4),
+          'gutters': 0.25,
+          'spread': 'narrow',
+          'container-spread': 'narrow',
+  );
+  .wrap {
+   /* background: susy-svg-grid((
+            'columns': susy-repeat(4),
+            'gutters': 0.25,
+            'spread': 'narrow',
+            'container-spread': 'narrow',
+    )) no-repeat scroll;*/
+  }
+}
+
+// Grille pour l'écran large
+// Remplacer 601px par une variable de point de rupture
+@media(min-width: $ecranMoyen) {
+  $susy: (
+          'columns': susy-repeat(12),
+          'gutters': 0.25,
+          'spread': 'narrow',
+          'container-spread': 'narrow'
+  );
+  //Conteneur
+  .wrap {
+    max-width: $ecranLarge;
+    margin: 0 auto;
+    /*background: susy-svg-grid((
+            'columns': susy-repeat(12),
+            'gutters': 0.25,
+            'spread': 'narrow',
+            'container-spread': 'narrow'
+    )) no-repeat scroll;*/
+  }
+}
+
+.wrap.cf {
+  @include clearfix;
+}
+
+//RÈGLES DE BASE
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Great Vibes';
+  text-align: center;
+}
+
+h2, h3 {
+  font-family: Georgia, serif;
+}
+
+//Texte rouge
+.texteRouge {
+  color: $texteRouge;
+}
+
+//Boutons
+.boutonPrimaire {
+  //  font-size: 1.2rem;
+  //  padding: 0 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1.25em 3em;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  box-shadow: 0.5em -0.5em 0 0 rgba(24, 24, 24, 0.1);
+  transition: all 90ms ease;
+  background-color: $jaune;
+  color: $noir;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border: none;
+  &:hover {
+    margin-top: 0em;
+    margin-bottom: 1em;
+    box-shadow: 0 0 0 0 rgba(24, 24, 24, 0);
+    background-color: $jaune;
+    color:$noir;
+  }
+}
+.btnLien {
+  color: $noir;
+  background-color: $jaune;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1em 2em;
+  box-shadow: 0 0 0 0 rgba(24, 24, 24, 0);
+  &:hover {
+    color: $jaune;
+    background-color: $noir;
+    transition: ease-in;
+    transition-duration: 300ms;
+  }
+}
+
+// Fils ariane
+.filAriane {
+  margin: 1em 0 0 0.3em;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline;
+  }
+  li:after {
+    content: "> ";
+  }
+  li:last-child:after {
+    content: " ";
+  }
+}
+
+//Icone général
+.icones{
+  width: 2em;
+  height: 1.7em;
+  position: relative;
+  bottom: -0.3em;
+}
+#erreur{
+  fill: $rougeErreur;
+}
+
+//Validation erreur
+.erreur{
+  color: $rougeErreur;
+}
+
+
+
+//////stepsbar
+.stepsBar {
+  list-style: none;
+  padding: 0;
+  margin: 5rem 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 601px) {
+  .stepsBar {
+    justify-content: center;
+  }
+}
+
+.stepsBar li {
+  display: inline-block;
+}
+
+.stepsBar__title {
+  flex: 0 1 33%;
+  position: relative;
+  text-align: center;
+  padding-top: 1em;
+}
+
+@media (min-width: 601px) {
+  .stepsBar__title {
+    flex: 0 1 20%;
+  }
+}
+
+/* Distinguer le titre de l'étape courante */
+.stepsBar__title[aria-current] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 140%;
+}
+
+.stepsBar__title span {
+  color: white;
+  //background-color: beige;
+  display: block;
+  padding: 1rem 0;
+  position: absolute;
+  width: 100%;
+  top: -4rem;
+  left: 0;
+  font-weight: 800;
+}
+.stepsBar svg path:after {
+    content: "";
+    width: 8em;
+    height: 1px;
+    background-color: $rouge;
+    margin-left: calc(15% - 4em);
+    margin-bottom: 1em;
+    display: block;
+    @media (max-width: $ecranMoyen) {
+      margin-left: 0;
+      width: 6em;
+    }
+}
+.barreProg {
+  width: 20px;
+  height: 20px;
+}

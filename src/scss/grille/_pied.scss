@@ -1,0 +1,84 @@
+//Pied de page
+.footer {
+  background-color: $gris;
+  color: $blanc;
+  padding: 1em 3em;
+  h3 {
+    margin: 0;
+  }
+  ul li {
+    font-family: Montserrat;
+    list-style-type: none;
+  }
+  &__contenu__rappel {
+    list-style-type: none;
+    a {
+      color: $blanc;
+      &:hover {
+        color: $jaune;
+      }
+    }
+  }
+  .credit {
+    text-align: center;
+    font-size: 1.2rem;
+    &:before {
+      content: "";
+      display: block;
+      width: 18em;
+      height: 1px;
+      background-color: $blanc;
+      margin-left: calc(50% - 9em);
+      margin-bottom: 1em;
+    }
+  }
+  .menu {
+    &__lien {
+      text-decoration: none;
+    }
+  }
+  .mentionsLegales {
+    text-align: center;
+    padding: 0;
+    font-size: 1.2rem;
+    a {
+      color: $blanc;
+      &:hover {
+        color: $jaune;
+      }
+    }
+  }
+  @media (min-width: $ecranMoyen) {
+    .footer__contenu {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__rappel {
+      float: left;
+      width: 40%;
+    }
+  }
+}
+.footer__contenu__contact {
+  ul {
+    padding: 0;
+  }
+}
+.footer__contenu__reseauxsociaux {
+  ul {
+    display: inline-flex;
+    width: 100%;
+    padding: 0;
+    justify-content: space-around;
+  }
+  .icone {
+    fill: $blanc;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      fill: $couleurInteractivite;
+      transition: ease-in;
+      transition-duration: 0.5s;
+    }
+  }
+}

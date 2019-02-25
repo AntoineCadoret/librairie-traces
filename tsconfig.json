@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es6",
+    "outDir":"./assets/js",
+    "sourceMap": true
+  },
+  "exclude": [
+    "bower_components",
+    "node_modules"
+  ]
+}

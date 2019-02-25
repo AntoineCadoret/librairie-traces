@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: demo multilingue v.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-07 09:32-0500\n"
+"PO-Revision-Date: 2018-11-07 09:37-0500\n"
+"Last-Translator: Eve Février <efevrier@gmail.com>\n"
+"Language-Team: ef & timcsf\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: ../../../views\n"
+"Plural-Forms: nplurals=2;plural=n>2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: connexion.tpl.php:5
+msgid "Librairie Traces - Connexion"
+msgstr "Librairie Traces - Connexion"
+
+#: connexion.tpl.php:9 index.tpl.php:9 livraison.tpl.php:12
+msgid "Aller au contenu"
+msgstr "Aller au contenu"
+
+#: connexion.tpl.php:12
+msgid "Connexion"
+msgstr "Connexion"
+
+#: fiche.tpl.php:46
+msgid "Quantité:"
+msgstr "Quantité:"
+
+#: fiche.tpl.php:64 index.tpl.php:67 livre.tpl.php:59
+msgid "Ajouter au panier"
+msgstr "Ajouter au panier"
+
+#: fiche.tpl.php:71
+msgid "Description"
+msgstr "Description"
+
+#: fiche.tpl.php:76
+msgid "Publication"
+msgstr "Publication"
+
+#: fiche.tpl.php:78
+msgid "Nombre de pages: "
+msgstr "Nombre de pages: "
+
+#: fiche.tpl.php:79
+msgid "Collection: "
+msgstr "Collection: "
+
+#: fiche.tpl.php:81
+msgid "Catégorie(s): "
+msgstr "Catégorie(s): "
+
+#: fiche.tpl.php:93
+msgid "Éditeur(s): "
+msgstr "Éditeur(s): "
+
+#: fiche.tpl.php:99
+msgid "Année: "
+msgstr "Année: "
+
+#: fiche.tpl.php:105 partials/entete.tpl.php:21
+msgid "Auteur"
+msgstr "Auteur"
+
+#: fiche.tpl.php:109
+msgid "Url du  blogue: "
+msgstr "Url du  blogue: "
+
+#: fiche.tpl.php:123
+msgid "Honneur: "
+msgstr "Honneur: "
+
+#: fiche.tpl.php:133
+msgid "Ce livre a fait parler de lui"
+msgstr "Ce livre a fait parler de lui"
+
+#: fiche.tpl.php:137
+msgid "Par: "
+msgstr "Par: "
+
+#: fiche.tpl.php:148
+msgid "Les avis: "
+msgstr "Les avis: "
+
+#: fiche.tpl.php:172
+msgid "Voir tous les commentaires"
+msgstr "Voir tous les commentaires"
+
+#: index.tpl.php:5
+msgid "Librairie Traces - Accueil"
+msgstr "Librairie Traces - Accueil"
+
+#: index.tpl.php:13
+msgid "Librairie Traces"
+msgstr "Librairie Traces"
+
+#: index.tpl.php:39
+msgid "Nouveautés"
+msgstr "Nouveautés"
+
+#: index.tpl.php:41
+msgid "En afficher plus"
+msgstr "En afficher plus"
+
+#: index.tpl.php:75
+msgid "Actualités"
+msgstr "Actualités"
+
+#: index.tpl.php:91
+msgid "Lire la suite >"
+msgstr "Lire la suite >"
+
+#: index.tpl.php:97
+msgid "Afficher plus d'actualités"
+msgstr "Afficher plus d’actualités"
+
+#: livraison.tpl.php:7
+msgid "information de livraison"
+msgstr "information de livraison"
+
+#: livraison.tpl.php:14
+msgid "Livraison"
+msgstr "Livraison"
+
+#: livraison.tpl.php:23
+msgid "Adresse de livraison: "
+msgstr "Adresse de livraison: "
+
+#: livraison.tpl.php:26
+msgid "Prénom: "
+msgstr "Prénom: "
+
+#: livraison.tpl.php:32
+msgid "Nom: "
+msgstr "Nom: "
+
+#: livraison.tpl.php:38
+msgid "Adresse: "
+msgstr "Adresse: "
+
+#: livraison.tpl.php:43
+msgid "Ville: "
+msgstr "Ville: "
+
+#: livraison.tpl.php:65
+msgid "Code postal"
+msgstr "Code postal"
+
+#: livraison.tpl.php:76
+msgid "Adresse de livraison par défaut"
+msgstr "Adresse de livraison par défaut"
+
+#: livraison.tpl.php:80
+msgid "Utiliser comme adresse de facturation"
+msgstr "Utiliser comme adresse de facturation"
+
+#: livre.tpl.php:5
+#, fuzzy
+#| msgid "Librairie Traces - Connexion"
+msgid "Librairie Traces - Catalogue"
+msgstr "Librairie Traces - Connexion"
+
+#: livre.tpl.php:13
+msgid "Catégorie"
+msgstr "Catégorie"
+
+#: livre.tpl.php:15
+msgid "tout"
+msgstr "tout"
+
+#: livre.tpl.php:24
+msgid "trier par:"
+msgstr "trier par:"
+
+#: livre.tpl.php:26
+msgid "A-Z alphabétique"
+msgstr "A-Z alphabétique"
+
+#: livre.tpl.php:27
+msgid "Z-A alphabétique décroissant"
+msgstr "Z-A alphabétique décroissant"
+
+#: livre.tpl.php:33
+msgid "trier"
+msgstr "trier"
+
+#: livre.tpl.php:37 partials/entete.tpl.php:8
+msgid "Livres"
+msgstr "Livres"
+
+#: livre.tpl.php:69 livre.tpl.php:71
+msgid "Premier"
+msgstr "Premier"
+
+#: livre.tpl.php:77 livre.tpl.php:79
+msgid "Précédent"
+msgstr "Précédent"
+
+#: livre.tpl.php:85
+msgid "Page "
+msgstr "Page "
+
+#: livre.tpl.php:85
+msgid " de  "
+msgstr " de  "
+
+#: livre.tpl.php:91 livre.tpl.php:93
+msgid "Suivant"
+msgstr "Suivant"
+
+#: livre.tpl.php:99 livre.tpl.php:101
+msgid "Dernier"
+msgstr "Dernier"
+
+#: partials/entete.tpl.php:9
+msgid "Meilleurs vendeurs"
+msgstr "Meilleurs vendeurs"
+
+#: partials/entete.tpl.php:10
+msgid "Découvrir Traces"
+msgstr "Découvrir Traces"
+
+#: partials/entete.tpl.php:11
+msgid "Auteurs"
+msgstr "Auteurs"
+
+#: partials/entete.tpl.php:12
+msgid "Nous joindre"
+msgstr "Nous joindre"
+
+#: partials/entete.tpl.php:19
+msgid "Sujet"
+msgstr "Sujet"
+
+#: partials/entete.tpl.php:20
+msgid "ISBN"
+msgstr "ISBN"
+
+#: partials/entete.tpl.php:22
+msgid "Mot-clé"
+msgstr "Mot-clé"
+
+#: partials/entete.tpl.php:45
+msgid "Panier"
+msgstr "Panier"
+
+#~ msgid "Coups de coeur"
+#~ msgstr "Coups de coeur"
+
+#~ msgid "Traces - Toute l'histoire de l'Amérique du Nord en livres"
+#~ msgstr "Traces - Toute l'histoire de l'Amérique du Nord en livres"
+
+#~ msgid "Carte cadeau"
+#~ msgstr "Carte cadeau"
+
+#~ msgid "À paraître"
+#~ msgstr "À paraître"
+
+#~ msgid "Se connecter"
+#~ msgstr "Se connecter"
+
+#~ msgid "une chaine avec la variable de langue '%s' !"
+#~ msgstr "une chaine avec la variable de langue '%s' !"
+
+#~ msgid "une chaine avec une variable %s !"
+#~ msgstr "une chaine avec une variable %s !"

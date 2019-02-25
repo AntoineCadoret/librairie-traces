@@ -1,0 +1,414 @@
+/**
+ * @author Antoine Cadoret <antoinecadoret97@gmail.com>
+ * @author Beverly Cagelet <beverly.cagelet.protic@gmail.com>
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+**/
+/**
+ * ------------------
+ * TABLE DES MATIÈRES
+ * ------------------
+ * BIBLIOTHÈQUES (dans le dossier bower_components)
+ ** Normalize
+ ** Susy
+ * UTILITAIRES
+ ** variables
+ ** mixins
+ * BASE
+ ** Charte typographique responsive
+ * Règles générales
+ * Conteneur
+ ** Grille pour l'écran étroit
+ ** Grille pour l'écran large
+ * Structure
+ * En-tête
+ * Hyperliens
+ * Pied de page
+ */
+/*** Normalize ***/
+/***** utilitaires ****/
+@import "utilitaires/variables";
+@import "utilitaires/mixins";
+/***** base (typo) ****/
+@import "base/typo";
+/***** grille ****/
+@import "grille/entete";
+@import "grille/general";
+@import "grille/pied";
+
+//Règles de base
+
+
+main {
+  padding: 1em;
+  @media (min-width: $ecranMoyen) {
+    padding: 0;
+  }
+}
+
+.erreur {
+  width: 30px;
+  height: 30px;
+  fill: red;
+}
+///Barre de progression - transaction
+.barreProgression {
+  .pointsProgression {
+    display: inline-flex;
+  }
+}
+
+//Conteneur
+@media (min-width: $ecranMoyen) {
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .flexbox-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    .fiche {
+      margin: 20px 0;
+      width: 30%;
+    }
+  }
+
+  .flexbox-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .flexbox-3 {
+    //min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // ou
+    //justify-content: flex-end;
+  }
+}
+
+//Transaction
+.transaction {
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  div p {
+    font-size: 1.6rem;
+  }
+}
+
+//En-tête
+.h1 {
+  font-family: 'Great Vibes';
+  text-align: center;
+}
+
+///BEV - page
+///Nouveautés
+.nouveautes {
+  font-size: 1.4rem;
+  margin-bottom: 5em;
+  .flexbox-1 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  h2 {
+    &:after {
+      content: "";
+      width: 8em;
+      height: 1px;
+      background-color: $rouge;
+      margin-left: calc(15% - 4em);
+      margin-bottom: 1em;
+      display: block;
+      @media (max-width: $ecranMoyen) {
+        margin-left: 0;
+        width: 6em;
+      }
+    }
+  }
+  .h4 {
+    font-size: 1.4rem;
+  }
+  &__imgFond {
+    display: flex;
+    background-color: $rouge;
+    height: 250px;
+    vertical-align: middle;
+    align-self: center;
+
+    @media (min-width: $ecranMoyen) {
+      width: 90%;
+      height: 300px;
+    }
+    img {
+      width: 85%;
+      box-shadow: 3px 3px 15px black;
+      @media (min-width: $ecranMoyen) {
+        width: 90%;
+      }
+      &:hover {
+        box-shadow: none;
+        transition: ease-in 0.5s;
+        filter: grayscale(90%);
+      }
+    }
+  }
+  &__livre {
+    width: 40%;
+    margin-bottom: 1em;
+    @media (min-width: $ecranMoyen) {
+      width: 19%;
+      //vertical-align: center;
+    }
+  }
+}
+
+a.nouveautes__lien {
+  font-size: 1.4rem;
+  padding-left: 30%;
+  @media (min-width: $ecranMoyen) {
+    padding-left: 60%;
+  }
+}
+
+///COUP DE COEUR
+.coupCoeur {
+  width: 100%;
+  &__contenu {
+    display: flex;
+    &--texte {
+    }
+  }
+  img {
+    width: 100%;
+  }
+  h2 {
+    &:after {
+      content: "";
+      display: block;
+      width: 8em;
+      height: 1px;
+      background-color: $rouge;
+      margin-left: calc(15% - 4em);
+      margin-bottom: 1em;
+    }
+  }
+}
+
+////ACTUALITÉS
+#actualites {
+  h2 {
+    &:after {
+      content: "";
+      width: 8em;
+      height: 1px;
+      background-color: $rouge;
+      margin-left: calc(15% - 4em);
+      margin-bottom: 1em;
+      display: block;
+      @media (max-width: $ecranMoyen) {
+        margin-left: 0;
+        width: 6em;
+      }
+    }
+  }
+}
+.actualites {
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 1em;
+  background-color: $rouge;
+
+  @media (min-width: $ecranMoyen) {
+    padding: 0;
+  }
+
+  &__article {
+    background-color: #E0E0E0;
+    margin: 2em 0.5em;
+    @media (min-width: $ecranMoyen) {
+      display: inline-block;
+      width: 30%;
+      box-shadow: 10px 11px 24px $noirTransparent;
+      //align-items: stretch;
+      height: 580px;
+    }
+    &__lien {
+      float: right;
+      margin: 2em;
+      color: deeppink;
+      &:hover {
+        color: $rouge;
+      }
+    }
+  }
+  .bloc_info {
+    display: flex;
+  }
+  .date {
+    margin: 0;
+    width: 15%;
+    font-family: Georgia;
+    font-weight: 800;
+    padding: 1em 2em;
+    text-align: center;
+  }
+  .auteur {
+    width: 80%;
+    font-size: 1.8rem;
+    padding: 1em 2em;
+    font-family: Montserrat;
+    font-style: italic;
+
+    @media (min-width: $ecranMoyen) {
+      width: 15%;
+      padding: 1em 2em;
+      line-height: 1.8rem;
+    }
+  }
+
+}
+
+h3.actualites__article__titre {
+  margin: 0;
+}
+
+.boutonActu {
+  text-align: center;
+  @media (min-width: $ecranMoyen) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.4em;
+  }
+}
+
+.ctnLivre {
+  display: flex;
+}
+
+.actualites__article__contenu {
+  //background-color: $blanc;
+  background-blend-mode: lighten;
+  max-height: 600px;
+  p {
+    font-family: Montserrat;
+    line-height: 1.8rem;
+    padding: 0 1em 1em 1em;
+  }
+}
+
+.filtre {
+  opacity: .82;
+  background-color: $blanc;
+}
+
+.icone {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+///CONNEXION
+#connexion, #inscription {
+  max-width: 600px;
+  margin: 0 auto;
+  span {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.autreOption {
+  text-align: center;
+  margin: 1.8em 0;
+}
+
+.formulaire {
+  padding: 1em;
+  h1, .h1 {
+    margin: 0;
+    color: $rouge;
+  }
+
+  form {
+    div {
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      display: block;
+      @media (min-width: $ecranMoyen) {
+        display: flex;
+      }
+    }
+    label {
+      width: 100%;
+      @media (min-width: $ecranMoyen) {
+        width: 40%;
+        text-align: right;
+      }
+    }
+    input {
+      width: 100%;
+      @media (min-width: $ecranMoyen) {
+        margin-left: 1em;
+        width: 30%;
+      }
+    }
+    fieldset {
+      border: none;
+      @media (min-width: $ecranMoyen) {
+        display: flex;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+      }
+
+      label {
+        //width: 25%;
+      }
+      input {
+        //width: 25%;
+      }
+    }
+    //todo courriel 40%
+  }
+}
+
+.logoTracesImpression {
+  display: none;
+  @media print {
+    display: block;
+  }
+}
+
+
+
+//Paramètres d'impression
+@media print {
+  header, footer {
+    display: none;
+  }
+  body {
+    padding: 1em;
+  }
+  h1 {
+    color: black;
+  }
+  h3 {
+    font-weight: bold;
+  }
+  .boutonPrimaire, a {
+    display: none;
+  }
+}
+

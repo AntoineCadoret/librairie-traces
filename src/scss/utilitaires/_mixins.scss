@@ -1,0 +1,111 @@
+/**
+ * @author Antoine Cadoret <antoinecadoret97@gmail.com>
+ * @author Beverly Cagelet <beverly.cagelet.protic@gmail.com>
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+ * @todo ADAPTER ce fichier au besoin
+ @todo adapter les boutons
+ * ----------------------------
+ * TABLE DES MATIÈRES - MIXINS
+ * ----------------------------
+ * base (BoxSizing, Clearfix)
+ * accessibilité
+ * typographie
+ * Boutons
+ */
+
+
+
+/******** Utilitaires de base (BoxSizing, Clearfix) *********/
+/* BoxSizing */
+@mixin border-box-sizing{
+    * {
+        box-sizing: border-box;
+    }
+}
+
+/* Clearfix: pour contrer le problème des enfants flottants*/
+@mixin clearfix {
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+.cf{
+    @include clearfix;
+}
+
+/******** Utilitaires pour accessibilité *********/
+// Hide only visually, but have it available for screenreaders:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    // Extends the .visuallyhidden class to allow the element to be focusable
+    // when navigated to via the keyboard: https://www.drupal.org/node/897638
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        white-space: normal;
+        width: auto;
+    }
+}
+.visuallyhidden,
+.screen-reader-only{
+    @include visuallyhidden;
+}
+
+
+
+/******** Utilitaires pour typographie *********/
+// Fonction pour convertir une valeur de font-size en pixels à son équivalent rem
+@function calculateRem($size) {
+    $remSize: $size / 10px;
+    @return #{$remSize}rem;
+}
+// Mixin qui inclus la solution de repli en pixel suivi par la valeur calculée en rem
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//Pour UTILISER:
+//@include fontSize(15px);
+
+
+
+/* Utilitaire de mise en page */
+@mixin hardReset{
+    margin:0;
+    padding:0;
+}
+
+
+//Boutons
+//todo bouton primaire
+//@mixin boutonPrimaire {
+//    height: 60px;
+//    background-color: $jaune;
+//    color: $noir;
+//    box-shadow: 5px 5px $noir;
+//    font-size: 1.2rem;
+//    padding: 0 1em;
+//    border: none;
+//    &:hover {
+//        box-shadow: none;
+//        transition-duration: 500ms;
+//    }
+//}

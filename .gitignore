@@ -1,0 +1,27 @@
+#Le # au début d'une ligne défini un commentaire
+
+#Fichiers cachés créés par Mac OS
+.DS_Store
+Icon?
+
+#Gulp
+gulpfile.js
+
+#.htacess ... chaque compte est personnalise
+livres/.htaccess
+
+#Dossier caché créé par PHPStorm
+.idea/
+
+#Dossier des dépendances
+node_modules/
+bower_components/
+
+#Dossier caché de fichiers temporaires créé par sass
+.sass-cache/
+
+#Dossiers de compilation
+assets/css/
+assets/js/
+!assets/js/objAvis.json
+

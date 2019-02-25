@@ -1,0 +1,144 @@
+/**
+ * @author Antoine Cadoret <antoinecadoret97@gmail.com>
+ * @author Beverly Cagelet <beverly.cagelet.protic@gmail.com>
+ * @author Michaël Croteau <mickeycroteau@gmail.com>
+**/
+/**
+ * --------------------------------------------------------
+ * TABLE DES MATIÈRES - Typographie responsive (Mobile First)
+ * --------------------------------------------------------
+ * Importation des polices
+ * Base décimale
+ * Hiérarchie responsive
+ * Hyperiens
+ */
+
+/** Importation de police **/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+/** Base décimale **/
+html{
+  font-size: 62.5%;
+  font-family: Montserrat;
+}
+body {
+  /* 16px pour toutes les largeurs d'écran */
+  @include fontSize(16px);
+  /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
+  line-height: 1.375;
+  /* police générale */
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: $ecranMoyen) {
+  body {
+    line-height: 1.5;
+  }
+}
+@media (min-width: $ecranLarge) {
+  body {
+    line-height: 1.75;
+  }
+}
+
+/** Hiérarchie responsive **/
+/*  plus proche = plus petit  &  plus loin = plus grand */
+h1,h2,h3,h4, .h1, .h2, .h3, .h4 {
+  font-weight: 300;
+}
+/* TITRES NIVEAU 1 */
+h1,
+.h1 { /* = 32px */
+  @include fontSize(32px);
+}
+@media (min-width: $ecranMoyen) {
+  h1,
+  .h1 { /* = 40px */
+    @include fontSize(40px);
+  }
+}
+@media (min-width: $ecranLarge) {
+  h1,
+  .h1 { /* = 48px */
+    @include fontSize(48px);
+  }
+}
+
+h1, h2 {
+  color: $rouge;
+}
+/* TITRES NIVEAU 2 */
+h2,
+.h2 { /* = 24px */
+  @include fontSize(24px);
+}
+@media (min-width: $ecranMoyen) {
+  h2,
+  .h2 { /* = 32px */
+    @include fontSize(32px);
+  }
+}
+@media (min-width: $ecranLarge) {
+  h2,
+  .h2 { /* = 36px */
+    @include fontSize(36px);
+  }
+}
+@media (min-width: $ecranMoyen) {
+  #contact h2, .h2 { /* = 24px */
+    @include fontSize(24px);
+  }
+}
+
+/* TITRES NIVEAU 3 */
+h3,
+.h3 { /* = 18px */
+  @include fontSize(18px);
+}
+@media (min-width: $ecranMoyen) {
+  h3,
+  .h3 {  /* = 24px */
+    @include fontSize(24px);
+  }
+}
+@media (min-width: $ecranLarge) {
+  h3,
+  .h3 { /* = 30px */
+    @include fontSize(30px);
+  }
+}
+
+h2, h3 {
+  font-family: Georgia, serif;
+}
+/* TITRES NIVEAU 4 */
+h4,
+.h4 { /* = 16px */
+  @include fontSize(16px);
+}
+@media (min-width: $ecranMoyen) {
+  h4,
+  .h4 { /* = 18px */
+    @include fontSize(18px);
+  }
+}
+
+@media (min-width: $ecranLarge) {
+  h4,
+  .h4 { /* = 22px */
+    @include fontSize(22px);
+  }
+}
+
+/** Hyperliens **/
+a {
+  &:link, &:visited {
+    color: black;
+  }
+  &:active, &:hover { //survol et focus liens changent d’état (voir les captures-écrans fournies).
+    color: lighten($rouge,40%);
+    transition: 0.5s;
+  }
+}
+
